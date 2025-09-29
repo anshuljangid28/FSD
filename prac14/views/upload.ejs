@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Resume (PDF only, max 2MB)</h1>
+
+        <% if (error) { %>
+            <div style="color:red;"><%= error %></div>
+        <% } %>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept="application/pdf" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
