@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kids Calculator</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #FFFAE3;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #FF6F61;
+      font-size: 3em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #FFD700;
+    }
+
+    input, select, button {
+      padding: 15px;
+      font-size: 1.2em;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 2px solid #FF6F61;
+      width: 200px;
+      outline: none;
+    }
+
+    input:focus, select:focus, button:focus {
+      border-color: #FFD700;
+    }
+
+    select {
+      width: 220px;
+    }
+
+    button {
+      background: #FF6F61;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #FFD700;
+      color: #FF6F61;
+      font-weight: bold;
+    }
+
+    .calculator-container {
+      background: #FFF8DC;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-container">
+    <h1>🧮 Kids Calculator 🧮</h1>
+    <form action="/calculate" method="POST">
+      <input type="number" name="num1" placeholder="Enter first number" required>
+      <br>
+      <input type="number" name="num2" placeholder="Enter second number" required>
+      <br>
+      <select name="operation" required>
+        <option value="add">➕ Add</option>
+        <option value="subtract">➖ Subtract</option>
+        <option value="multiply">✖ Multiply</option>
+        <option value="divide">➗ Divide</option>
+      </select>
+      <br>
+      <button type="submit">Calculate 🎉</button>
+    </form>
+  </div>
+</body>
+</html>
