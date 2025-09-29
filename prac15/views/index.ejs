@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Portal</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="card">
+    <% if (!loggedIn) { %>
+      <!-- Login Form -->
+      <h2>Library Portal</h2>
+      <form method="POST" action="/login">
+        <input type="text" name="username" placeholder="Enter your name" required />
+        <br/>
+        <button type="submit">Login</button>
+      </form>
+
+    <% } else { %>
+      <!-- Profile Page -->
+      <h2>Welcome, <%= username %>!</h2>
+
+      <p><strong>Last Login:</strong> 
+        <span class="badge login-badge"><%= loginTime %></span>
+      </p>
+
+      <% if (logoutTime) { %>
+        <p><strong>Last Logout:</strong> 
+          <span class="badge logout-badge"><%= logoutTime %></span>
+        </p>
+      <% } %>
+
+      <h3>Login History:</h3>
+      <ul>
+        <% loginHistory.forEach(time => { %>
+          <li><span class="badge login-badge"><%= time %></span></li>
+        <% }) %>
+      </ul>
+
+      <h3>Logout History:</h3>
+      <ul>
+        <% logoutHistory.forEach(time => { %>
+          <li><span class="badge logout-badge"><%= time %></span></li>
+        <% }) %>
+      </ul>
+
+      <a href="/logout">Logout</a>
+    <% } %>
+  </div>
+</body>
+</html>
