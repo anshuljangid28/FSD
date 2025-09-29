@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Enrollment</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f8f9fc;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c3e50;
+      padding: 15px 30px;
+      color: white;
+    }
+    .navbar h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .nav-links a.active {
+      background: #1abc9c;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      display: none; /* hidden by default */
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn-edit {
+      background: #3498db;
+      color: white;
+    }
+    .btn-edit:hover {
+      background: #2980b9;
+    }
+    .btn-delete {
+      background: #e74c3c;
+      color: white;
+    }
+    .btn-delete:hover {
+      background: #c0392b;
+    }
+    .btn-add {
+      background: #27ae60;
+      color: white;
+      padding: 10px 18px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn-add:hover {
+      background: #1e8449;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>University Enrollment</h1>
+    <div class="nav-links">
+      <a onclick="showSection('students', this)">Students</a>
+      <a onclick="showSection('courses', this)">Courses</a>
+      <a onclick="showSection('enrollments', this)">Enrollments</a>
+    </div>
+  </div>
+
+  <!-- Students Section -->
+  <div class="container" id="students">
+    <h2>Students</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Swara</td>
+          <td>swara@gmail.com</td>
+          <td>
+            <button class="btn btn-edit">Edit</button>
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-add">+ Add New Student</button>
+  </div>
+
+  <!-- Courses Section -->
+  <div class="container" id="courses">
+    <h2>Courses</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Credits</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>.Net</td>
+          <td>8</td>
+          <td>
+            <button class="btn btn-edit">Edit</button>
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-add">+ Add New Course</button>
+  </div>
+
+  <!-- Enrollments Section -->
+  <div class="container" id="enrollments">
+    <h2>Enrollments</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2</td>
+          <td>Swara</td>
+          <td>.Net</td>
+          <td></td>
+          <td>
+            <button class="btn btn-edit">Edit</button>
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-add">+ Add New Enrollment</button>
+  </div>
+
+  <!-- JavaScript for switching sections -->
+  <script>
+    function showSection(sectionId, el) {
+      // hide all sections
+      document.querySelectorAll('.container').forEach(sec => sec.style.display = 'none');
+      // remove active from all nav links
+      document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+      // show selected section
+      document.getElementById(sectionId).style.display = 'block';
+      // set active link
+      el.classList.add('active');
+    }
+
+    // show Students by default
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".nav-links a").click();
+    });
+  </script>
+
+</body>
+</html>

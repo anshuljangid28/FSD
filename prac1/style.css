@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e3f2fd;
+    margin: 0;
+    padding: 20px;
+}
+
+.poll-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 150px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 32px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.vote-button {
+    padding: 12px 28px;
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.vote-button:hover {
+    background-color: #01579b;
+}
+
+.simple-results div {
+    font-size: 20px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.bar-chart {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.bar {
+    height: 30px;
+    margin: 10px 0;
+    color: white;
+    line-height: 30px;
+    padding-left: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+#bar-js {
+    background-color: #ff7043; 
+}
+
+#bar-python {
+    background-color: #66bb6a; 
+}
+
+#bar-java {
+    background-color: #42a5f5; 
+}
