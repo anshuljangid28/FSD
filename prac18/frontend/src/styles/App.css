@@ -1,0 +1,52 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #1976d2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.home-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.note-form input,
+.note-form textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.note-form button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background-color: #125aa1;
+}
